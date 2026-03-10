@@ -1,0 +1,203 @@
+@import 'tailwindcss';
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Custom utilities */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ===== Markdown Editor & Preview 스타일 보호 ===== */
+/* Tailwind Preflight(CSS Reset)가 마크다운 렌더링 스타일을 덮어쓰지 않도록 !important 적용 */
+
+.wmde-markdown h1 {
+  font-size: 2em !important;
+  font-weight: 700 !important;
+  margin: 0.67em 0 !important;
+  border-bottom: 1px solid #d0d7de !important;
+  padding-bottom: 0.3em !important;
+  line-height: 1.25 !important;
+}
+
+.wmde-markdown h2 {
+  font-size: 1.5em !important;
+  font-weight: 700 !important;
+  margin: 0.83em 0 !important;
+  border-bottom: 1px solid #d0d7de !important;
+  padding-bottom: 0.3em !important;
+  line-height: 1.25 !important;
+}
+
+.wmde-markdown h3 {
+  font-size: 1.25em !important;
+  font-weight: 700 !important;
+  margin: 1em 0 !important;
+  line-height: 1.25 !important;
+}
+
+.wmde-markdown h4 {
+  font-size: 1em !important;
+  font-weight: 700 !important;
+  margin: 1.33em 0 !important;
+  line-height: 1.25 !important;
+}
+
+.wmde-markdown h5 {
+  font-size: 0.875em !important;
+  font-weight: 700 !important;
+  margin: 1.67em 0 !important;
+  line-height: 1.25 !important;
+}
+
+.wmde-markdown h6 {
+  font-size: 0.85em !important;
+  font-weight: 700 !important;
+  margin: 2.33em 0 !important;
+  color: #656d76 !important;
+  line-height: 1.25 !important;
+}
+
+.wmde-markdown p {
+  margin: 1em 0 !important;
+  line-height: 1.6 !important;
+}
+
+.wmde-markdown ul {
+  list-style-type: disc !important;
+  padding-left: 2em !important;
+  margin: 1em 0 !important;
+}
+
+.wmde-markdown ol {
+  list-style-type: decimal !important;
+  padding-left: 2em !important;
+  margin: 1em 0 !important;
+}
+
+.wmde-markdown li {
+  margin: 0.25em 0 !important;
+  display: list-item !important;
+}
+
+.wmde-markdown li > ul,
+.wmde-markdown li > ol {
+  margin: 0 !important;
+}
+
+.wmde-markdown blockquote {
+  margin: 1em 0 !important;
+  padding: 0 1em !important;
+  color: #656d76 !important;
+  border-left: 0.25em solid #d0d7de !important;
+}
+
+.wmde-markdown code {
+  padding: 0.2em 0.4em !important;
+  margin: 0 !important;
+  font-size: 85% !important;
+  background-color: rgba(175, 184, 193, 0.2) !important;
+  border-radius: 6px !important;
+  font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas,
+    'Liberation Mono', monospace !important;
+}
+
+.wmde-markdown pre {
+  padding: 16px !important;
+  overflow: auto !important;
+  font-size: 85% !important;
+  line-height: 1.45 !important;
+  background-color: #f6f8fa !important;
+  border-radius: 6px !important;
+  margin: 1em 0 !important;
+}
+
+.wmde-markdown pre code {
+  padding: 0 !important;
+  margin: 0 !important;
+  font-size: 100% !important;
+  background-color: transparent !important;
+  border-radius: 0 !important;
+}
+
+.wmde-markdown hr {
+  height: 0.25em !important;
+  padding: 0 !important;
+  margin: 24px 0 !important;
+  background-color: #d0d7de !important;
+  border: 0 !important;
+}
+
+.wmde-markdown a {
+  color: #0969da !important;
+  text-decoration: underline !important;
+}
+
+.wmde-markdown table {
+  border-spacing: 0 !important;
+  border-collapse: collapse !important;
+  margin: 1em 0 !important;
+  width: max-content !important;
+  max-width: 100% !important;
+  overflow: auto !important;
+}
+
+.wmde-markdown table th,
+.wmde-markdown table td {
+  padding: 6px 13px !important;
+  border: 1px solid #d0d7de !important;
+}
+
+.wmde-markdown table th {
+  font-weight: 600 !important;
+  background-color: #f6f8fa !important;
+}
+
+.wmde-markdown table tr:nth-child(2n) {
+  background-color: #f6f8fa !important;
+}
+
+.wmde-markdown img {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+.wmde-markdown strong {
+  font-weight: 700 !important;
+}
+
+.wmde-markdown em {
+  font-style: italic !important;
+}
